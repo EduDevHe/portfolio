@@ -1,47 +1,30 @@
----
-interface Props {
-  seconds: string;
-  words: string[];
-}
-const { seconds, words } = Astro.props;
----
-
 <div class="words">
-  <span
-    data-seconds={seconds}
-    data-words={words}
-    id="output"
-    class="rotate_word"></span>
+  <h1 class="rotate_word"></h1>
 </div>
 
-<script>
+<script is:inline>
   let index = 1;
 
   const output = document.querySelector(".rotate_word");
-  const seconds = output.getAttribute("data-seconds");
-  const words = output.getAttribute("data-words").split(",");
 
-  setInterval(
-    () => {
-      output.innerHTML = `${words[index]}`;
-      index = index + 1;
-      if (index == words.length) index = 0;
-    },
-    parseInt(`${seconds[0]}000`),
-  );
+  const words = ["front", "back"];
+  setInterval(() => {
+    output.innerHTML = `${words[index]}`;
+    index = index + 1;
+    if (index == words.length) index = 0;
+  }, 5000);
 </script>
 
-<style define:vars={{ seconds }}>
-  .words {
+<style>
+  div {
     overflow: hidden;
     font-size: 20px;
   }
-  .rotate_word {
+  h1 {
     display: block;
     position: relative;
     overflow: hidden;
-    border: 1px solid blue;
-    animation: rotate_word_animation var(--seconds) infinite;
+    animation: rotate_word_animation 5s infinite;
   }
 
   @keyframes rotate_word_animation {

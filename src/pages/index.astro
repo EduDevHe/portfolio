@@ -2,8 +2,6 @@
 import Portfolio from "../layouts/Portfolio.astro";
 import Header from "../components/Header.astro";
 import Title from "../components/Title.astro";
-
-const word = ["front", "back", "a"];
 ---
 
 <Portfolio title="Portfolio">
@@ -11,7 +9,7 @@ const word = ["front", "back", "a"];
   <main class="wrapper">
     <div class="intro-wrapper">
       <article class="article">
-        <Title seconds="5s" words={word} client:load />
+        <Title />
       </article>
 
       <article class="logo">
