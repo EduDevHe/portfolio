@@ -1,57 +1,18 @@
 ---
 import Portfolio from "../layouts/Portfolio.astro";
-import Header from "../components/Header.astro";
-import Title from "../components/Title.astro";
+import Hero from "../components/hero/Hero.svelte";
 ---
 
 <Portfolio title="Portfolio">
-  <Header />
-  <main class="wrapper">
-    <div class="intro-wrapper">
-      <article class="article">
-        <Title />
-      </article>
-
-      <article class="logo">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio eos
-        asperiores voluptatum saepe, quas dolore eaque repellat, tempora a
-        tempore minima deleniti sed qui, voluptate exercitationem porro aliquid!
-        Assumenda, maiores.
-      </article>
-    </div>
+  <main>
+    <Hero client:load />
   </main>
 </Portfolio>
 
 <style>
-  .wrapper {
+  main {
     display: grid;
     grid-template-rows: 4fr 1fr 1fr;
     min-height: 100vh;
-  }
-
-  .intro-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas: "article logo";
-    border: 1px solid blue;
-  }
-
-  .article {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-area: article;
-    border: 1px solid red;
-  }
-
-  .logo {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-area: logo;
-    border: 1px solid green;
   }
 </style>
