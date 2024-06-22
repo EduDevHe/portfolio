@@ -18,7 +18,7 @@
     let entries = Array.from(currentWord).entries();
 
     for (let [index] of entries) {
-      displayedText = currentWord.substring(0, index++);
+      displayedText = currentWord.substring(0, index + 1);
       await sleep(typingSpeed);
     }
   };

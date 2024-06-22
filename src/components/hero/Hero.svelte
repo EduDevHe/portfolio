@@ -7,9 +7,7 @@
     <h1>eduardo dev</h1>
     <div>
       <span>&lt;</span>
-      <Typewriter
-        words={["FRONT-END/> ", "BACK-END/> ", "DEVOPS/>", "aaaaaaaaaaaaa"]}
-      />
+      <Typewriter words={["FRONT-END/> ", "BACK-END/> ", "FULL-STACK/>"]} />
     </div>
   </article>
   <section></section>
